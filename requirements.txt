@@ -3,6 +3,4 @@ numpy
 jax
 streamlit
 matplotlib
-os
-pickle
 lightweight_mmm
