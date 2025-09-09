@@ -129,7 +129,7 @@ def summary_df(mmm):
 # --- Load Data ---
 @st.cache_data
 def load_data():
-    df = pd.read_csv('../dataset/data_clean.csv')
+    df = pd.read_csv('data_clean.csv')
     df = add_event_binaries(df, monthly_events_by_year)
     df["event_count"] = df[[c for c in df.columns if c.startswith("is_")]].sum(axis=1)
     df = df.drop([c for c in df.columns if c.startswith("is_")], axis=1)
@@ -378,4 +378,5 @@ if run_optim:
         unsafe_allow_html=True
     )
 else:
+
     st.info("Click the button above to run budget optimization.")
